@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.3
 // @description  play music when tickets are available
-// @author       preetam
+// @author       preetam & Satya Kavtei
 // @match        https://in.bookmyshow.com/buytickets/*
 // @grant        none
 // ==/UserScript==
@@ -92,6 +92,7 @@ function playSound() {
 function searchForTheatre(availableTheatresList) {
     console.log("what we have: " + availableTheatresList.length);
     console.log("what we want: " + theatres);
+    console.log("what we want: " + Object.keys(theatres));
   	for (let i = 0; i < availableTheatresList.length; i++) {
     		if (theatres.hasOwnProperty(availableTheatresList[i].text.trim())) {
             console.log("we found it! " + availableTheatresList[i]);
